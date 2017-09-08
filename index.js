@@ -1,14 +1,6 @@
 const express = require('express');
 // const parser = require('body-parser').urlencoded({ extended: false });
-const multer = require('multer');
-
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => cb(null, './public'),
-    filename: (req, file, cb) => cb(null, file.originalname)
-});
-
-const upload = multer({ storage });
-
+const upload = require('./uploadConfig');
 const reload = require('reload'); // eslint-disable-line
 
 const app = express();
