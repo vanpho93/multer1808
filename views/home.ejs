@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <form action="/signup" method="POST">
+    <form action="/signup" method="POST" enctype="multipart/form-data">
       <input type="text" placeholder="Enter your email" name="email">
       <br><br>
       <input type="text" placeholder="Enter your password" name="password">
+      <br><br>
+      <input type="file" name="profile">
       <br><br>
       <button>Sign Up</button>
     </form>

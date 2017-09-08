@@ -1,5 +1,9 @@
 const express = require('express');
-const parser = require('body-parser').urlencoded({ extended: false });
+// const parser = require('body-parser').urlencoded({ extended: false });
+const multer = require('multer');
+
+const upload = multer({ dest: './public' });
+
 const reload = require('reload'); // eslint-disable-line
 
 const app = express();
@@ -9,7 +13,7 @@ app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => res.render('home'));
 
-app.post('/signup', parser, (req, res) => {
+app.post('/signup', upload.single('profile'), (req, res) => {
     res.send(req.body);
 });
 
